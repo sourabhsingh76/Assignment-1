@@ -5,9 +5,9 @@ import java.util.ArrayList;
 public class Player {
 	String name;
 	
-	ArrayList<Card> cards = new ArrayList<Card>();
+	ArrayList<Card> cards = new ArrayList<Card>();   //creating an ArrayList of type Card
 
-	public Player(String name) {
+	public Player(String name) {       //constructor
 		super();
 		this.name = name;
 	}
@@ -24,6 +24,5 @@ public class Player {
 	public ArrayList<Card> getCards() {
 		return cards;
 	}
-	
 	
 }

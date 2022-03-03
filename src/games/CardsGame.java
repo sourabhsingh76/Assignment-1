@@ -5,40 +5,33 @@ import java.util.ArrayList;
 public class CardsGame {
 
 	public static void main(String[] args) {
-		ArrayList<Player> players = new ArrayList<>();
+		ArrayList<Player> players = new ArrayList<>();  //declaring an ArrayList of type Player
 		players.add(new Player("player1"));
 		players.add(new Player("player2"));
 		players.add(new Player("player3"));
 		players.add(new Player("player4"));
 		
 		
-		Deck deck = new Deck();
+		Deck deck = new Deck();       //declaring an instance of Deck class
 		
-		// Get 4 spadeCards
-		ArrayList<Card> shuffledSpadeCards = deck.randomShuffledCards(4,"SPADE");
 		
-		for(int i=0;i<4;i++) {
+		ArrayList<Card> shuffledSpadeCards = deck.randomShuffledCards(4,"SPADE");   //Get randomly shuffled 4 spade cards
+		
+		for(int i=0;i<4;i++) {         //assigning each player 1 spade card
 			players.get(i).addCard(shuffledSpadeCards.get(i));
 		}
 		
-		// Get 4 faceCards
-		ArrayList<Card> shuffledFaceCards = deck.randomShuffledCards(4, "FACECARD");
 		
-        for (int i =0;i<4;i++){
+		ArrayList<Card> shuffledFaceCards = deck.randomShuffledCards(4, "FACECARD");  //Get randomly shuffled 4 face cards
+		
+        for (int i =0;i<4;i++){        //assigning each player 1 face card
         	players.get(i).addCard(shuffledFaceCards.get(i));
         }
         
-        // Get all NormalCards
-    	ArrayList<Card> shuffledNormalCards = deck.randomShuffledCards(44,"NORMALCARD");
+        
+    	ArrayList<Card> shuffledNormalCards = deck.randomShuffledCards(44,"NORMALCARD");  //Get all randomly shuffled normal cards 
     	
-    	/*
-        for (int i = 0; i < 4; i++){
-            for(int j = 0; j < 44; j++){
-            	players.get(i%4).addCard(shuffledNormalCards.get(j%4));    
-            }
-        }
-        */
-    	int a=0;
+    	int a=0;                         //assigning each player 11 normal cards
     	for (int i = 0; i < 4; i++){
     		a++;
             for(int j = 11*i; j<11*a; j++){
@@ -46,10 +39,10 @@ public class CardsGame {
             }
         }
         
-        for(Player p : players) {
-        	System.out.println(p + "=" + p.getCards());
+    	
+        for(Player p : players) {              //printing cards contained by each player
+        	System.out.println(p + " = " + p.getCards());
         }
-     
 
 	}
 
