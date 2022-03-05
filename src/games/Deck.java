@@ -94,13 +94,13 @@ public class Deck {
 			return firstFourCards;
 			
 		}else{ 
-	        ArrayList<Card> cards = concatenate(spadeCards, faceCards, normalCards);  //remaining normal cards
+	        ArrayList<Card> cards = concatenate(spadeCards, faceCards, normalCards);  //remaining cards
 	       
 	        // Shuffle Logic
 	        Random rand = new Random();     
-	        for (int i = 0; i < 30; i++)    //shuffling remaining normal cards 
+	        for (int i = 0; i < 44; i++)    //shuffling remaining cards 
 	        {
-	            int r = i + rand.nextInt(30 - i);   //getting value of r in the range from 0 to 30-i
+	            int r = i + rand.nextInt(44 - i);   //getting value of r in the range from 0 to 44-i
 	              
 	             //swapping the elements
 	             Card temp = cards.get(r);
